@@ -18,19 +18,34 @@
         text-align: center;
       }
     </style>
-    <title>Name | Reversi</title>
+    <script>
+      function submitForm(){
+        var username = document.getElementById('username').value;
+        window.location.href = 'lobby.html?username=' + username;
+      }
+    </script>
+    <title>Enter Username | Reversi</title>
   </head>
   <body>
     <div class="container-fluid text-center" id="header">
       <div class="row">
         <div class="col">
-          <h1>Reversi</h1>
+          <h2>Enter your username:</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form class="form-inline" onsubmit='submitForm(); return false;'>
+            <div class="form-group">
+              <label for='username' class='col-form-label sr-only'>Enter Username</label>
+              <input class='form-control' type='text' value='' id='username' placeholder='Enter Username'/>
+            </div>
+            <button type='submit' class='btn btn-default btn-primary'>Done</button>
+          </form>
         </div>
       </div>
     </div>
-    <div>
-      <p>Some text lol</p>
-    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
