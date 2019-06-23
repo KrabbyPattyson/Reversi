@@ -39,6 +39,7 @@ socket.on('send_message_response',function(payload){
     return;
   }
   document.getElementById("messages").innerHTML += '<p><b>'+payload.username+' says: </b>'+ payload.message +'</p>';
+  window.scrollTo(0,document.body.scrollHeight);
 })
 
 function send_message(){
@@ -46,6 +47,7 @@ function send_message(){
     payload.room = chat_room;
     payload.username = username;
     payload.message = document.getElementById('send_message_holder').value;
+    document.getElementById('send_message_holder').value = "";
     console.log('*** Client Log Message: \'send_message\' payload: '+JSON.stringify(payload));
     socket.emit('send_message',payload);
 }
