@@ -75,7 +75,7 @@ socket.on('join_room_response',function(payload){
   var newHTML = '<p><b>' +payload.username + '</b> just entered the Lobby. </p>';
   var newNode = $(newHTML);
   newNode.hide();
-  $('#messages').append(newNode);
+  $('#messages').prepend(newNode);
   newNode.slideDown(1000);
 });
 
@@ -101,7 +101,7 @@ socket.on('player_disconnected',function(payload){
   var newHTML = '<p><b>' +payload.username + '</b> just left the Lobby. </p>';
   var newNode = $(newHTML);
   newNode.hide();
-  $('#messages').append(newNode);
+  $('#messages').prepend(newNode);
   newNode.slideDown(1000);
 });
 
